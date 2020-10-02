@@ -1,0 +1,75 @@
+.top-header {
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+}
+
+#return-arrow {
+    width: 12vw;
+    height: 4vh;
+    bottom: 0.4vh;
+    position: absolute;
+    left: 3vw;
+}
+
+.top-header #logo-reset img {
+    width: 40vw;
+    height: 4vh;
+}
+
+#login {
+    text-decoration: none;
+    color: var(--color-secondary);
+    font: bold 1.1rem var(--font-secondary);
+    bottom: 1vh;
+    right: 3vw;
+    position: absolute;
+}
+
+@media(min-width: 750px) {
+    #login {
+        font-size: 2rem;
+    }
+    #login {
+        bottom: .5vh;
+    }
+    .top-header #logo-reset img {
+        width: 40vw;
+        height: 5vh;
+    }
+}
+
+@media(min-width: 1000px) {
+    #login {
+        font-size: 2.8rem;
+    }
+}
+
+@media(min-width: 1100px) {
+    .top-header {
+        margin-top: 2vh;
+    }
+    #return-arrow {
+        width: 5vw;
+        height: 5vh;
+    }
+    .top-header #logo-reset img {
+        width: 20vw;
+        height: 6vh;
+    }
+    .top-header #login {
+        font-size: 2rem;
+        bottom: 1vh;
+        transition: .5s;
+    }
+    .top-header #login:hover {
+        color: var(--color-secondary-dark);
+    }
+
+    .top-header #return-arrow {
+        left: 1.5vw;
+    }
+}

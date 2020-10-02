@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#054A91">
+    <link rel="shortcut icon" href="https://static.thenounproject.com/png/16385-200.png" type="image/png">
+    <link rel="stylesheet" href="/styles/CSS/main-style.css">
+    <link rel="stylesheet" href="/styles/CSS/top-header.css">
+    <link rel="stylesheet" href="/styles/CSS/sign.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Montserrat:ital,wght@1,500;1,700&family=Work+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Criar conta</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-header">
+            <a href="#" onclick="history.back()">
+                <img id="return-arrow" src="/images/utils/return-arrow.png" alt="Return">
+            </a>
+
+            <a id="logo-reset" href="/all-movies?reset=1">
+                <img src="/images/utils/main-logo.png" alt="main-movies">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <label for="create-account">Criação de conta</label>
+        <form action="/confirm-account" name="createAccount" method="POST">
+            <fieldset>
+                <legend>Dados pessoais*</legend>
+            
+                <label for="username">Nome: </label>
+                <input type="text" name="username" id="username" required>
+
+                <label for="userEmail">E-mail: </label>
+                <input type="email" name="userEmail" id="user-email" required>
+
+                <label for="userCPF">CPF: </label>
+                <input type="number" name="userCPF" id="cpf" minlength="11" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+
+                <label for="userPassword">Senha: </label>
+                <input type="password" name="userPassword" id="user-password" required>
+
+                <label for="confirmPassword">Confirmação: </label>
+                <input type="password" name="confirmPassword" id="confirm-password" required>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço*</legend>
+                
+                <label for="userCEP">CEP: </label>
+                <input type="number" name="userCEP" id="user-cep" required>
+
+                <label for="userAdress">Endereço: </label>
+                <input type="text" name="userAdress" id="user-adress" required>
+
+                <label for="userAdressNumber">Número: </label>
+                <input type="number" name="userAdressNumber" id="user-adress-number" required>
+                
+                <label for="userNeighborhood">Bairro: </label>
+                <input type="text" name="userNeighborhood" id="user-neighborhood" required>
+
+            </fieldset>
+
+            <fieldset id='bank-data'>
+                <legend>Dados bancários</legend>
+                
+                <label for="cardNumber">Número: </label>
+                <input type="number" name="cardNumber" id="card-number" minlength="16" maxlength="16" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+
+                <label for="expirationDate">Validade: </label>
+                <input type="month" name="expirationDate" id="expiration-date">
+
+                <label for="cvv">CVV: </label>
+                <input type="number" name="cvv" id="cvv" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+
+                <label for="cardName">Nome Cartão: </label>
+                <input type="text" name="cardName" id="card-name">
+            </fieldset>
+
+            <button id="submit-button" onclick="passVerify()">Confirmar dados</button>
+        </form>
+    </main>
+
+    <p id='sign-error' style="display: none;">{{signError}}</p>
+
+    <script>
+        const signErrorMsg = document.getElementById('sign-error').innerText;
+        if(signErrorMsg != '') {
+            alert(signErrorMsg)
+        }
+    </script>
+
+    <script src="/scripts/passwordVerification.js">//Verify if the password and the confirm password was identical</script>
+    <script src="/scripts/BankData.js">//For the add of new cards and the form managment</script>
+</body>

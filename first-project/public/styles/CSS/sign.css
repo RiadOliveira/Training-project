@@ -1,0 +1,151 @@
+body header .top-header {
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+header .top-header #logo-reset {
+    margin: 0;
+}
+
+header .top-header #return-arrow {
+    position: absolute;
+    margin: 0;
+    bottom: 5%;
+    left: 3vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6vh;
+    margin-bottom: 5vh;
+}
+
+main>label {
+    font: 1.4rem var(--font-primary);
+    color: var(--color-secondary);
+    margin-bottom: 4vh;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main form fieldset {
+    width: 80%;
+    margin-bottom: 4vh;
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-vlight);
+}
+
+main form label {
+    font: .9rem var(--font-secondary);
+    color: var(--color-primary-vdark);
+    display: inline-flex;
+    width: 36%;
+}
+
+main form input {
+    margin-bottom: 1.7vh;
+    border: 0;
+    outline: 0;
+    height: 3vh;
+    font: .8rem var(--font-texts);
+    width: 55.5%;
+}
+
+main form #expiration-date {
+    width: 56.5%;
+}
+
+main form fieldset legend {
+    font: 1.1rem var(--font-secondary);
+    color: var(--color-secondary-light);
+    margin-bottom: 2vh;
+}
+
+main form button {
+    font: 1.1rem var(--font-secondary);
+    padding: .7rem;
+    color: var(--color-secondary-light);
+    background-color: var(--color-utility);
+    border-radius: .5rem;
+    outline: 0;
+    border: 0;  
+    cursor: pointer;
+    transition: .5s;
+}
+
+main form button:hover {
+    background: var(--color-utility-dark);
+}
+
+@media (max-width: 350px) {
+    :root {
+        font-size: 90%;
+    }
+}
+
+@media (min-width: 750px) {
+    :root {
+        font-size: 170%;
+    }
+    main form #expiration-date {
+        width: 56%;
+    }
+    main form label {
+        width: 28%;
+        margin-left: .5vw;
+    }
+    main form input {
+        width: 65%;
+    }
+    main form #expiration-date {
+        width: 65.5%;
+    }
+}
+
+@media (min-width: 1000px) {
+    :root {
+        font-size: 220%;
+    }
+}
+
+@media (min-width: 1100px) {
+    :root {
+        font-size: 150%;
+    }
+    main {
+        margin-top: 10vh;
+        margin-bottom: 0;
+    }
+    body main form fieldset {
+        width: 60%;
+        margin-bottom: 6vh;
+    }
+    main form input {
+        height: 5vh;
+        font-size: .8rem;
+        width: 74.5%;
+    }
+    main>label {
+        margin-bottom: 5vh;
+    }
+    main form button {
+        padding: .4rem;
+        margin-bottom: 6vh;
+    }
+    main form label {
+        width: 22%;
+        margin-left: .5vw;
+    }
+    main form #expiration-date {
+        width: 74.77%;
+    }
+}

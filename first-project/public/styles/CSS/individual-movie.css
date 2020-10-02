@@ -1,0 +1,273 @@
+body {
+    overflow-y: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movie-information {
+    margin-top: 8vh;
+    width: 95vw;
+    margin-left: 4vw;
+    display: flex;
+    color: var(--color-primary-vlight);
+}
+
+.movie-information #poster {
+    height: 28vh;
+    margin-top: 2vh;
+    margin-left: 4vw;
+}
+
+.movie-information .movie-details {
+    margin-left: 4vw;
+    font-family: var(--font-texts);
+}
+
+.movie-information .movie-details h3 {
+    margin-top: 2vh;
+    display: flex;
+    align-items: start;
+    margin-bottom: 0;
+    width: auto;
+}
+
+.movie-information .movie-details p {
+    font-size: .85rem;
+}
+
+.movie-information .movie-details h3 strong {
+    margin: 0;
+    width: auto;
+    font-size: 1rem;
+    margin-right: 1.5vw;
+    max-width: 40.5vw;
+}
+
+.movie-information .movie-details h3 img {
+    height: 3vh;
+}
+
+.movie-synopsis {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    box-sizing: content-box;
+    margin-top: 1vh;
+}
+
+.movie-synopsis p {
+    width: 84vw;
+    text-align: justify;
+    font-family: var(--font-texts);
+    color: var(--color-primary-vlight);
+    font-size: 0.9rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 8vh;
+    margin-top: 8vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+}
+
+footer a {
+    text-decoration: none;
+    font: 700 0.9rem var(--font-secondary);
+}
+
+footer a img {
+    display:none;
+}
+
+footer #trailer {
+    color: white;
+    background-color: red;
+    padding: .8rem;
+    border-radius: .5rem;
+}
+
+footer #buy-ticket {
+    color: var(--color-secondary);
+    background-color: rgb(124, 32, 32);
+    padding: .8rem;
+    border-radius: .5rem;
+}
+
+@media(max-width: 290px) {
+    .movie-information .movie-details h3 p {
+        font-size: 1rem;
+    }
+    .movie-information .movie-details>p {
+        font-size: .75rem;
+    }
+}
+
+@media(max-width: 350px) {
+    :root {
+        font-size: 90%;
+    }    
+}
+
+@media (min-width: 375px) {
+    :root {
+        font-size: 110%;
+    }
+    .movie-synopsis p {
+        width: 84vw;
+        text-align: justify;
+        font-family: var(--font-texts);
+        font-size: 0.8rem;
+    }
+}
+
+@media (width:375px) and (height:812px) {
+    .movie-information .movie-details h3 p {
+        font-size: 1.1rem;
+        margin-right: 0;
+    }
+}
+
+@media (width:450px) and (height:600px) {
+    .movie-information #poster {
+        height: 35vh;
+    }
+}
+
+@media (min-width: 750px) {
+    :root {
+        font-size: 190%;
+    }
+    #login {
+        font-size: 1.1rem;
+    }
+    .movie-synopsis {
+        margin-top: 0.5vh;
+    }
+    .movie-information .movie-details h3 img {
+        height: 4vh;
+    }
+    .movie-information #poster {
+        height: 35vh;
+    }
+    .movie-information .movie-details h3 p {
+        font-size: 1.2rem;
+    }
+    .movie-information .movie-details h3 p {
+        max-width: 41vw;
+    }
+}
+
+@media (min-width: 1000px) {
+    :root {
+        font-size: 200%;
+    }
+    .movie-information #poster {
+        height: 40vh;
+    }
+    .movie-information .movie-details h3 p {
+        font-size: 1.5rem;
+    }
+    .movie-information .movie-details>p {
+        font-size: 1.2rem;
+    }
+    #login {
+        font-size: 1.3rem;
+    }
+    .movie-information .movie-details>p {
+        font-size: 1.1rem;
+    }
+    .movie-synopsis p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    :root {
+        font-size: 100%;
+    }
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .movie-information {
+       margin-left: 0;
+       justify-content: space-between;
+       margin-top: 7vh;
+       width: 750px;
+       box-sizing: border-box;
+    }
+    .movie-information #poster {
+        height: 320px;
+        width: 240px;
+        margin-left: 88px;
+    }
+    .movie-information .movie-details {
+        width: 500px;
+        margin-left: 20px;
+    }
+    .movie-synopsis p {
+        width: 573px;
+        font-size: 1rem;
+    }
+    .movie-information .movie-details h3 strong {
+        margin-right: .6vw;
+        font-size: 1.5rem;
+        width: auto;
+        max-width: 330px;
+    }
+    .movie-information .movie-details h3 {
+        width: auto;
+        justify-content: initial;
+    }
+
+    .movie-information .movie-details p {
+        font-size: 1.2rem;
+    }
+    footer {
+        bottom: 30px;
+        width: 100vw;
+        position: absolute;
+    }
+    footer a img {
+        display: initial;
+    }
+    footer img {
+        height: 4vh;
+        margin-left: 1vw;
+    }
+    footer #trailer {
+        color: red;
+        background-color: white;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 300px;
+        transition: .5s;
+    }
+
+    footer #trailer:hover {
+        background-color: rgb(233, 230, 230);
+    }
+
+    footer #buy-ticket {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 300px;
+        transition: .5s;
+    }
+
+    footer #buy-ticket:hover {
+        background-color: rgb(104, 28, 28);
+    }
+}

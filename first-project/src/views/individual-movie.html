@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#054A91">
+    <link rel="shortcut icon" href="https://img.icons8.com/cotton/2x/movie-beginning.png" type="image/png">
+    <link rel="stylesheet" href="/styles/CSS/main-style.css">
+    <link rel="stylesheet" href="/styles/CSS/top-header.css">
+    <link rel="stylesheet" href="/styles/CSS/individual-movie.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Montserrat:ital,wght@1,500;1,700&family=Work+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Filmes selecionado</title>
+</head>
+
+<body>
+    <Header>
+        <div class="top-header">
+            <a href="#" onclick="history.back()">
+                <img id="return-arrow" src="/images/utils/return-arrow.png" alt="Return">
+            </a>
+
+            <a href="/all-movies?reset=1" id="logo-reset">
+                <img src="/images/utils/main-logo.png" alt="main-movies">
+            </a>
+
+            {%if isLogged%}
+                <a id="login" href="/logged">Dados</a>
+            {%else%}
+                <a id="login" href="/sig&log">Login</a>
+            {%endif%}
+
+        </div>
+    </Header>
+
+    <main>
+        <div class="movie-information">
+            <img id="poster" src="{{MovieData.poster}}" alt="movie-poster">
+            <div class="movie-details">
+                <h3><strong>{{MovieData.name}}</strong><img src="{{MovieData.classification}}" alt="Classification"></h3> <!--Name/Classification-->
+                <p>Produtora: {{MovieData.producer}}.</p> <!--Producer-->
+                <p>Gênero: {{MovieData.genre}}</p> <!--Type-->
+                <p>Idioma: {{MovieData.language}}</p> <!--Language-->
+                <p>Duração: {{MovieData.duration}}min</p> <!--Duration, fazer em min e conversão para horas e minutos no final-->
+                <p>Dia/Horário: {{MovieData.day}}/{{MovieData.month}} - {{MovieData.timeFrom}}h</p>
+            </div>
+        </div>
+
+        <div class="movie-synopsis">
+            <p>{{MovieData.synopsis}}</p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="{{MovieData.trailerLink}}" id="trailer" target="_blank">Assistir ao trailer<img src="https://trucao.com.br/wp-content/uploads/2018/07/youtube-logo.png" alt="logo-youtube"></a>
+
+        {%if isLogged%}
+            <a href="/buy-ticket?movieID={{MovieData.id}}" id="buy-ticket">Comprar ingresso<img src="/images/Utils/ticket.png" alt="Ticket"></a>
+        {%else%}
+            <a href="/sig&log" id="buy-ticket">Comprar ingresso<img src="/images/Utils/ticket.png" alt="Ticket"></a>
+        {%endif%}
+
+    </footer>
+</body>

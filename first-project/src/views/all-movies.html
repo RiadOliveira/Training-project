@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#054A91">
+    <link rel="shortcut icon" href="https://img.icons8.com/cotton/2x/movie-beginning.png" type="image/png">
+    <link rel="stylesheet" href="/styles/CSS/main-style.css">
+    <link rel="stylesheet" href="/styles/CSS/all-movies.css">
+    <link rel="stylesheet" href="/styles/CSS/top-header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Montserrat:ital,wght@1,500;1,700&family=Work+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Filmes em Cartaz</title>
+</head>
+
+<body>
+    <Header>
+        <div class="top-header">
+
+            <a href="/">
+                <img id="return-arrow" src="/images/utils/return-arrow.png" alt="Return">
+            </a>
+
+            <a id="logo-reset" href="/all-movies?reset=1">
+                <img src="/images/utils/main-logo.png" alt="main-movies">
+            </a>
+
+            {%if isLogged%}
+                <a id="login" href="/logged">Dados</a>
+            {%else%}
+                <a id="login" href="/sig&log">Login</a>
+            {%endif%}
+
+        </div>
+
+        
+        <div class="highlights">
+            {%for Movies in highlightData%}
+                <a style="opacity: 0; display: none" href="/individual-movie?movieID={{Movies.MovieID}}" class='movies-posters'>
+                    <img src="{{Movies.highLink}}" alt="movie-highlight"> 
+                </a>
+            {%endfor%}
+
+            <button onclick="showHighlights(-1)" id="left-arrow"> 
+                <img src="/images/utils/left-arrow.png" alt="left-arrow">
+            </button>
+
+            <button onclick="showHighlights(1)" id="right-arrow">
+                <img src="/images/utils/right-arrow.png" alt="right-arrow">
+            </button>
+        </div>
+    </Header>
+    
+    <main>
+        <div class="movies">
+            <div id="exibition-search">
+                <h2 id="title-page">Em Exibição {{actualDay}}</h2>
+                <form action="/search-movie" id="search-pc" name="searchMovie" method="POST">
+                    <div class="input-block">
+                        <label for="search">Pesquisar dia</label>
+                        <input type="number" name="search" id="search" min="1" max="31">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+
+            {%if MoviesData.length != 0%}
+
+                {%for ind in indexes%}
+                <article class="movies-description">
+                
+                    <a href="/individual-movie?movieID={{MoviesData[ind].id}}">
+                        <img id="poster" src="{{MoviesData[ind].poster}}" alt="movie-poster">
+                    </a>
+
+                    <div class="content">
+                        <div class="title-movie">
+                            <a href="/individual-movie?movieID={{MoviesData[ind].id}}">
+                                <h3>{{MoviesData[ind].name}}</h3>
+                            </a>
+                            <img src="{{MoviesData[ind].classification}}" alt="Classification">
+                        </div>
+                        
+                        <p>Horário: {{MoviesData[ind].timeFrom}} - {{MoviesData[ind].timeTo}}h &nbsp &nbsp Idioma: {{MoviesData[ind].language}}</p>
+                        <div class="synopsis">
+                            <p>{{MoviesData[ind].reducedSynopsis}}</p>
+                        </div>
+
+                    </div>
+                </article>
+                {%endfor%}
+            
+            {%else%}
+                <div id="no-movies">Nenhum filme encontrado no dia escolhido.</div>
+            {%endif%}
+
+        </div>
+
+        <footer>
+
+            <a href="/return-day"><img src="/images/Utils/return.png" alt="Return"></a> <!--Return to previous Day-->
+            <form action="/search-movie" id="search-mobile" name="searchMovie" method="POST">
+                <div class="input-block">
+                    <label for="search">Pesquisar dia</label>
+                    <input type="number" name="search" id="search" min="1" max="31">
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+            <a href="/advance-day"><img src="/images/Utils/advance.png" alt="Advance"></a> <!--Advance to next Day of exibition-->
+        </footer>
+    </main>
+
+    <script src='scripts/highlightMovies.js'>//Set the ways of pass the highlight movies</script>
+</body>

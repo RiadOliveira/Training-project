@@ -1,0 +1,191 @@
+#ticket-value {
+    display: none;
+}
+
+main {
+    display: flex;
+    margin-top: 4vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buy-finalization {
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy-finalization strong {
+    font: 1.2rem var(--font-secondary);
+    color: var(--color-secondary);
+    margin-bottom: 3vh;
+}
+
+.buy-finalization label, #totalValue {
+    color: var(--color-secondary-light);
+    font: 1rem var(--font-secondary);
+    margin-right: 3vw;
+}
+
+#totalValue {
+    margin-left: 4vw;
+}
+
+.buy-finalization .data-finalization {
+    width: 100%;
+    display: flex;
+    margin-left: -2vw;
+    align-items: center;
+    margin-bottom: 2vh;
+    justify-content: center;
+}
+
+.buy-finalization .data-finalization select, .buy-finalization .data-finalization input {
+    font: .8rem var(--font-texts);
+    outline: 0;
+    border: 0;
+    height: 3vh;
+}
+
+#pay-method {
+    width: 20%;
+}
+
+.buy-finalization .data-finalization input {
+    width: 10vw;
+    height: 3vh;
+    text-align: center;
+}
+
+.movie-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+    font: .9rem var(--font-secondary);
+    color: var(--color-secondary);
+}
+
+.movie-information h3 {
+    margin: 0;
+    margin-top: 1vh;
+}
+
+#poster {
+    height: 45vh;
+    width: 55vw;
+}
+
+main button {
+    font: 1rem var(--font-secondary);
+    padding: .6rem;
+    color: var(--color-secondary-light);
+    background-color: var(--color-utility);
+    border-radius: .5rem;
+    outline: 0;
+    border: 0;  
+    width: 50%;
+}
+
+@media(max-width: 350px) {
+    :root {
+        font-size: 85%;
+    }
+}
+
+@media(min-width: 750px) {
+    :root {
+        font-size: 160%;
+    }
+    body header .top-header #login {
+        font-size: 1.3rem;
+    }
+    main {
+        margin-bottom: 5vh;
+    }
+}
+
+@media(min-width: 1000px) {
+    :root {
+        font-size: 220%;
+    }
+    body header .top-header #login {
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 1100px) {
+    :root {
+        font-size: 150%;
+    }
+    body {
+        background-image: url(https://marirabello.com.br/wp-content/uploads/2018/09/Simple-Blue-Background.jpg);
+    }
+    #pay-method {
+        font-size: .7rem;
+    }
+    body .top-header #login {
+        font-size: 1.35rem !important;
+    }
+    body main {
+        margin-top: 15vh;
+        margin-right: 7vw;
+    }
+    body main .movie-information {
+        position: absolute;
+        right: 30vw;
+    }
+    #poster {
+        height: 40vh;
+        width: 15vw;
+    }
+    .buy-finalization {
+        margin-right: 8vw;
+        margin-top: 2vh;
+    }
+    .buy-finalization strong {
+        margin-bottom: 10vh;
+        margin-right: 2vw;
+    }
+    .buy-finalization label {
+        margin-right: 1vw;
+    }
+    #poster {
+        margin-top: -2vh;
+    }
+    .buy-finalization .data-finalization select, .buy-finalization .data-finalization input {
+        height: 4vh;
+    }
+    .buy-finalization .data-finalization input {
+        text-align: center;
+        width: 20%;
+        margin-right: 0;
+    }
+    main button {
+        font: 1rem var(--font-secondary);
+        padding: .6rem;
+        color: var(--color-secondary-light);
+        background-color: var(--color-utility);
+        border-radius: .5rem;
+        outline: 0;
+        border: 0;
+        width: 20%;
+        margin-top: 6vh;
+        margin-right: 11vw;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    main button:hover {
+        background: var(--color-utility-dark);
+    }
+    #totalValue {
+        margin-left: 1vw;
+    }
+    .movie-information h3 {
+        font-size: .9rem;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#054A91">
+    <link rel="shortcut icon" href="https://cdn.onlinewebfonts.com/svg/img_311846.png" type="image/png">
+    <link rel="stylesheet" href="/styles/CSS/main-style.css">
+    <link rel="stylesheet" href="/styles/CSS/logged.css">
+    <link rel="stylesheet" href="/styles/CSS/top-header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Montserrat:ital,wght@1,500;1,700&family=Work+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Meus dados</title>
+</head>
+
+<body onload="loadPage()">
+    <Header>
+        <div class="top-header">
+            <a href="#" onclick="history.back()">
+                <img id="return-arrow" src="/images/utils/return-arrow.png" alt="Return">
+            </a>
+
+            <a id="logo-reset" href="/all-movies?reset=1">
+                <img src="/images/utils/main-logo.png" alt="main-movies">
+            </a>
+        </div>
+    </Header>
+
+    <main>
+        <div class="page-tabs">
+            <div class="tab-buttons">
+                <button id="main-tab" onclick="navTabs(0)">Meus dados</button>
+                <button onclick="navTabs(1)">Dados bancários</button>
+                <a href="/">Sair</a>
+            </div>
+            
+            <div class="tab-content">
+                
+                <div id="user-data">
+                    {%if userData.username != ''%}
+                    <span>Nome de usuário:<br>{{userData.username}}<br></span>
+                    <span>E-mail:<br>{{userData.userEmail}}<br></span>
+                    <span>CPF:<br>{{userData.userCPF}}<br></span>
+                    <span>Senha:<br>{{userData.userPassword}}<br></span>
+                    <span>CEP:<br>{{userData.userCEP}}<br></span>
+                    <span>Endereço:<br>{{userData.userAdress}}<br></span>
+                    <span>Número:<br>{{userData.userAdressNumber}}<br></span>
+                    <span>Bairro:<br>{{userData.userNeighborhood}}<br></span>
+                    {%endif%}
+                </div>
+                
+                <div id="bank-data">
+                    <h3>Cartões:<button onclick="addCard()">Adicionar cartão</button></h3>
+
+                    <form action="/add-card" name="AddCard" id="add-card" method="POST">
+                        <fieldset>
+                            <legend>Dados bancários</legend>
+                            
+                            <label for="cardNumber">Número: </label>
+                            <input type="number" name="cardNumber" id="card-number" maxlength="16" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+            
+                            <label for="expirationDate">Validade: </label>
+                            <input type="month" name="expirationDate" id="expiration-date" required>
+            
+                            <label for="cvv">CVV: </label>
+                            <input type="number" name="cvv" id="cvv" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+            
+                            <label for="cardName">Nome Cartão: </label>
+                            <input type="text" name="cardName" id="card-name" required>
+
+                            <button type="button" id="cancel" onclick="cancelAdd()">Cancelar</button>
+                            <button id="submit-button" type="submit">Confirmar</button>
+                        </fieldset>
+                    </form>
+
+                    {%if verifyBank%}
+
+                        {%for BankData in userBankData%}
+                            {%if BankData%}
+                                <article class="card-information" id="{{loop.index0}}">
+                                    <strong>{{BankData.cardName}}<button onclick="deleteCard(this)"><img id='delete-img' src="https://images.emojiterra.com/mozilla/512px/274c.png" alt="delete-card"></button></strong> <!--Card name-->
+                                    <span>{{BankData.cardNumber}}</span> <!--Card number-->
+                                </article>
+                            {%endif%}
+                        {%endfor%}
+
+                    {%endif%}
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <p id='newCard' style="display: none;">{{newCard}}</p>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/scripts/loggedTabs.js">//For the alternation of the tabs</script>
+    <script src="/scripts/bankForm.js">//For the add of new cards and the form managment</script>
+</body>

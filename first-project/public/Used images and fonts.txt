@@ -1,0 +1,28 @@
+Icons:
+
+Index - https://cdn.iconscout.com/icon/free/png-512/popcorn-1751514-1489363.png
+All Movies and Individual Movie - https://img.icons8.com/cotton/2x/movie-beginning.png
+Sign/Login and Logged - https://cdn.onlinewebfonts.com/svg/img_311846.png
+Create account - https://static.thenounproject.com/png/16385-200.png
+Buy ticket - https://icon-library.com/images/buy-tickets-icon/buy-tickets-icon-0.jpg
+Success buy - https://www.iconfinder.com/data/icons/garis/512/check-512.png
+
+Images:
+
+Index popcorn - https://www.dreamstime.com/stock-illustration-cinema-background-popcorn-bowl-film-strip-ticket-attributes-detailed-vector-illustration-image44071364#_
+Index and Buy Ticket Background - https://marirabello.com.br/wp-content/uploads/2018/09/Simple-Blue-Background.jpg
+Return Arrow - https://png.pngtree.com/png-vector/20190223/ourlarge/pngtree-left-arrow-line-black-icon-png-image_691019.jpg
+Left Arrow Highlight - https://www.ithurria.com/themes/ithurria2019/images/arrow-left-white.png
+Right Arrow Higlight - https://www.ithurria.com/themes/ithurria2019/images/arrow-right-white.png
+Youtube logo - https://trucao.com.br/wp-content/uploads/2018/07/youtube-logo.png
+Buy ticket icon - https://img.icons8.com/ios/452/ticket.png
+Success buy icon - https://pngimage.net/wp-content/uploads/2018/06/v-verde-png-1.png
+Footer arrows - https://www.kindpng.com/picc/m/155-1554785_yellow-arrow-clipart-left-royalty-free-arrow-png.png
+Delete (X) icon - https://images.emojiterra.com/mozilla/512px/274c.png
+
+Fonts:
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Montserrat:ital,wght@1,500;1,700&family=Work+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+
+https://fonts.google.com/specimen/Montserrat?query=Montserrat#standard-styles
+https://fonts.google.com/specimen/Work+Sans?query=Work+sans
+https://fonts.google.com/specimen/Fira+Sans+Condensed?query=Fira+sans+condensed

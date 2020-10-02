@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#054A91">
+    <link rel="shortcut icon" href="https://www.iconfinder.com/data/icons/garis/512/check-512.png" type="image/png">
+    <link rel="stylesheet" href="/styles/CSS/main-style.css">
+    <link rel="stylesheet" href="/styles/CSS/top-header.css">
+    <link rel="stylesheet" href="/styles/CSS/success-buy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Montserrat:ital,wght@1,500;1,700&family=Work+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Compra concluída</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-header">
+
+            <a href="#" onclick="history.back()">
+                <img id="return-arrow" src="/images/utils/return-arrow.png" alt="Return">
+            </a>
+
+            <a id="logo-reset" href="/all-movies?reset=1">
+                <img src="/images/utils/main-logo.png" alt="main-movies">
+            </a>
+
+            {%if isLogged%}
+                <a id="login" href="/logged">Dados</a>
+            {%else%}
+                <a id="login" href="/sig&log">Login</a>
+            {%endif%}
+        </div>
+    </header>
+
+    <main>
+        {%if buyData.payMethod == 0%}
+            <div id='buy-card'>
+                <h2>{{buyData.text}}</h2>
+                <img src="{{buyData.img}}" alt="success-buy">
+            </div>
+        {%else%}
+            <div id='buy-billet'>
+                <h2>{{buyData.text}}</h2>
+                <img src="{{buyData.img}}" alt="billet">
+            </div>
+        {%endif%}
+    </main>
+</body>

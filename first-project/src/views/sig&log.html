@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#054A91">
+    <link rel="shortcut icon" href="https://cdn.onlinewebfonts.com/svg/img_311846.png" type="image/png">
+    <link rel="stylesheet" href="/styles/CSS/main-style.css">
+    <link rel="stylesheet" href="/styles/CSS/top-header.css">
+    <link rel="stylesheet" href="/styles/CSS/sig&log.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,500;1,300&family=Montserrat:ital,wght@1,500;1,700&family=Work+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Logar-se</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-header">
+            <a href="#" onclick="history.back()">
+                <img id="return-arrow" src="/images/utils/return-arrow.png" alt="Return">
+            </a>
+
+            <a id="logo-reset" href="/all-movies?reset=1">
+                <img src="/images/utils/main-logo.png" alt="main-movies">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="sign">
+            <h3>Ainda não possui uma conta?</h3>
+            <div class="buttons">
+                <a href="/create-account">Criar conta</a>
+            </div>
+        </div>
+
+        <div class="login">
+            <h3>Já possui? Logue-se agora</h3>
+                <div class="form-login">
+                    <form action="/complete-login" name="login" method="POST">
+                        <label for="email">E-mail: </label>
+                        <input type="email" name="email" id="email" required>
+
+                        <label for="password">Senha: </label>
+                        <input type="password" name="password" id="password" required>
+                        <div class="buttons">
+                            <button type="submit">Logar-se</button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </main>
+
+    <p id='logError' style="display: none;">{{logError}}</p>
+
+    <script>
+        const logErrorMsg = document.getElementById('logError').innerText;
+
+        if(logErrorMsg != '') {
+            alert(logErrorMsg);
+        }
+    </script>
+</body>

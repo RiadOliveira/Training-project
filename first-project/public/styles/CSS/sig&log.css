@@ -1,0 +1,223 @@
+body {
+    overflow-y: hidden;
+}
+
+body header .top-header {
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+header .top-header #logo-reset {
+    margin: 0;
+}
+
+header .top-header #return-arrow {
+    position: absolute;
+    margin: 0;
+    bottom: 5%;
+    left: 3vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+main div {
+    background-color: var(--color-primary-light);
+    width: 80vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 1rem;
+    margin-bottom: 3vh;
+    position: relative;
+}
+
+.sign h3, .login h3 {
+    font: 1.1rem var(--font-secondary);
+    color: var(--color-secondary);
+    margin-top: 3vh;
+    margin-bottom: 7vh;
+}
+
+.sign a {
+    font: 1.1rem var(--font-secondary);
+    text-decoration: none;
+    padding: 1rem;
+    justify-content: center;
+    color: var(--color-secondary-light);
+    background-color: var(--color-utility);
+    border-radius: .5rem;
+    margin-top: 5vh;
+}
+
+main .login {
+    padding-bottom: 2rem;
+    font: .95rem var(--font-secondary);
+    color: var(--color-secondary);
+}
+
+main .login .form-login {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+main .login .form-login form {
+    margin-top: -1vh;
+    position: relative;
+}
+
+main .login .form-login input {
+    margin-bottom: 2vh;
+    outline: none;
+    border: none;
+    height: 3.5vh;
+    font-family: var(--font-texts);
+}
+
+main .login .form-login form label {
+    display: inline-flex;
+    width: 15vw;
+    margin-right: 2vw;
+    margin-left: 9.5vw;
+}
+
+.login h3 {
+   margin-bottom: 0;
+}
+
+main div .buttons {
+    position: absolute;
+    height: 1vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+main div .buttons button {
+    font: 1.1rem var(--font-secondary);
+    padding: .7rem;
+    justify-content: center;
+    color: var(--color-secondary-light);
+    background-color: var(--color-utility);
+    border-radius: .5rem;
+    outline: 0;
+    border: 0;  
+}
+
+@media(max-width: 300px) {
+    :root {
+        font-size: 75%;
+    }
+    main .login .form-login input {
+        width: 40vw;
+    }
+}
+
+@media(width:411px) {
+    main .login .form-login form label {
+        margin-left: 13.3vw;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 350px) {
+    :root {
+        font-size: 85%;
+    }
+}
+
+@media(min-width: 400px) {
+    :root {
+        font-size: 110%;
+    }
+    main .login .form-login form label {
+        margin-left: 12.5vw;
+    }
+}
+
+@media(min-width: 750px) {
+    :root {
+        font-size: 180%;
+    }
+    main .login .form-login input {
+        height: 4vh;
+        width: 45%;
+        font-size: .85rem;
+    }
+    body main .login .form-login label {
+        margin-right: 0;
+        margin-left: 13.5vw;
+    }
+}
+
+@media(min-width: 1000px) {
+    :root {
+        font-size: 240%;
+    }
+}
+
+@media(min-width: 1100px) {
+    :root {
+        font-size: 180%;
+    }
+    main {
+        display: flex;
+        flex-direction: row;
+        margin-top: 15vh;
+        justify-content: space-evenly;
+    }
+    body main div {
+        height: 60vh;
+        width: 42vw;
+    }
+
+    body main .login h3, body main .sign h3 {
+        margin-top: 5vh;
+    }
+
+    body main .login {
+        padding: 0;
+    }
+
+    body main .login .form-login form { 
+        margin-top: -13vh;
+    }
+
+    body main .login .form-login input {
+        width: 40%;
+        height: 30%;
+        font-size: 0.6rem;
+    }
+    body main .login .form-login label {
+        margin-left: 8.5vw;
+        margin-right: 0;
+        width: 7vw;
+        margin-bottom: 3vh;
+    }
+    body main div .buttons button {
+        margin-bottom: -8vh;
+        cursor: pointer;
+        transition: .5s;
+    }
+    body main div .buttons a {
+        transition: .5s;
+    }
+
+    body main div .buttons button:hover, body main div .buttons a:hover {
+        background: var(--color-utility-dark);
+    }
+}

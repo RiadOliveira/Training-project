@@ -1,0 +1,125 @@
+#intro {
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.page-design #legend {
+    margin: 0;
+    font: bolder 1rem var(--font-primary);
+    color: var(--color-secondary);
+    margin-top: 2vh;
+}
+
+.page-design {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    margin-top: -5vh;
+}
+
+.page-design #logo  {
+   width: 85vw;
+}
+
+.page-design #img-logo {
+    width: 90vw;
+    height: 55vh;
+    margin-top: 2vh;
+}
+
+#intro .button-redirect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 3vh;
+}
+
+#intro #main-button {
+    font: bolder 1.5rem var(--font-primary);
+    text-decoration: none;
+    color: var(--color-secondary-light);
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--color-utility);
+    transition: background 0.5s;
+}
+
+#intro #main-button:hover {
+    background: var(--color-utility-dark);
+}
+
+@media(max-width:350px) {
+    #intro #main-button {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 700px) {  /*Ipad*/
+    #intro #main-button {
+        font-size: 2.5rem;
+        padding: 2rem;
+    }
+    .page-design #legend {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1000px) { /*Ipad Pro*/
+    #intro #main-button {
+        font-size: 3.5rem;
+    }
+    .page-design #legend {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1100px) { /*PCs*/
+
+    #intro {
+        background-image: url(https://marirabello.com.br/wp-content/uploads/2018/09/Simple-Blue-Background.jpg);
+    }
+
+    .page-design {
+        display: grid;
+        grid-template-columns: 45vw 45vw;
+        grid-template-rows: 35vh 25vh;
+        grid-template-areas: 
+        "title image"
+        "legend image"
+        ;
+        
+    }
+
+    .page-design #logo {
+        grid-area: title;
+        height: 13vh;
+        width: 48vw;
+        justify-self: left;
+        align-self: end;
+    }
+
+    .page-design #legend {
+        justify-self: left;
+        align-self: start;
+        font-size: 1.5rem;
+    }
+
+    .page-design #img-logo {
+        grid-area: image;
+        height: 53vh;
+        width: 30vw;
+        margin-top: 10vh;
+        justify-self: end;
+        margin-left: -10px;
+    }
+
+    #intro #main-button {
+        font-size: 2rem;
+    }
+}

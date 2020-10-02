@@ -1,0 +1,271 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    width: 100vw;
+    margin-left: -1.5vw;
+    margin-bottom: 5vh;
+}
+
+.page-tabs {
+    margin-left: 5vw;
+}
+
+.page-tabs .tab-buttons button, .page-tabs .tab-buttons a {
+    font: 1rem var(--font-secondary);
+    padding: .4rem;
+    color: var(--color-secondary-light);
+    background-color: var(--color-utility);
+    outline: 0;
+    border: 0; 
+    margin-right: 2vw;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: .1rem;
+}
+
+.page-tabs .tab-content {
+    border: 2px solid var(--color-utility);
+    width: 96.5%;
+    background-color: var(--color-primary-light);
+    margin-top: -.3vh;
+}
+
+.page-tabs .tab-content div {
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3vh;
+}
+
+.page-tabs .tab-content div span {
+    font: 1rem var(--font-secondary);
+    color: var(--color-primary-vdark);
+    line-height: 5vh;
+    display: block;
+    margin-bottom: 3vh;
+}
+
+.tab-content #bank-data h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8vh;
+    color: var(--color-secondary);
+    font: 1.3rem var(--font-secondary);
+}
+
+.tab-content #bank-data h3 button {
+    margin-right: 4vw;
+    color: var(--color-secondary);
+    font: 1rem var(--font-secondary);
+    background-color: var(--color-utility);
+    border: 0;
+    outline: 0;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.tab-content #bank-data h3 button:hover {
+    background: var(--color-utility-dark);
+}
+
+.tab-content #bank-data strong {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font: 1rem var(--font-secondary);
+    color: var(--color-primary-vdark);
+}
+
+.tab-content #bank-data strong button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin-left: 5vw;
+    padding: 0;
+}
+
+.tab-content #bank-data button img {
+    height: 2vh;
+    margin-left: -3vw;
+    margin-bottom: -.2vh;
+    cursor: pointer;
+}
+
+.page-tabs .tab-content #bank-data span {
+    margin-bottom: 5vh;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: -3vw;
+    margin-top: -2vh;
+    margin-bottom: 2vh;
+}
+
+main form fieldset {
+    width: 90%;
+    margin-bottom: 4vh;
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary-vlight);
+    position: relative;
+    padding-bottom: 10vh;
+}
+
+main form label {
+    font: .9rem var(--font-secondary);
+    color: var(--color-primary-vdark);
+    display: inline-flex;
+    width: 36%;
+}
+
+main form input {
+    margin-bottom: 1.7vh;
+    border: 0;
+    outline: 0;
+    height: 3vh;
+    font: .8rem var(--font-texts);
+    width: 60%;
+}
+
+main form #expiration-date {
+    width: 61%;
+}
+
+main form fieldset legend {
+    font: 1.1rem var(--font-secondary);
+    color: var(--color-secondary-light);
+    margin-bottom: 2vh;
+}
+
+main form button {
+    font: 1rem var(--font-secondary);
+    padding: .4rem;
+    position: absolute;
+    border-radius: .5rem;
+    outline: 0;
+    border: 0;  
+}
+
+main form #cancel {
+    left: 10vw;
+    bottom: 2vh;
+    background-color: red;
+    color: white;
+}
+
+main form #submit-button {
+    right: 10vw;
+    bottom: 2vh;
+    background-color: green;
+    color: white;
+}
+
+@media (max-width: 350px) {
+    :root {
+        font-size: 85%;
+    }
+}
+
+@media(min-width: 750px) {
+    :root {
+        font-size: 190%;
+    }
+    .tab-content #bank-data button img {
+        height: 2.3vh;
+        margin-left: -4vw;
+    }
+    .page-tabs .tab-buttons button, .page-tabs .tab-buttons a {
+        margin-bottom: .1vh;
+    }
+    .page-tabs .tab-content {
+        border: 5px solid var(--color-utility);
+    }
+    body header .top-header #login {
+        font-size: 1.3rem;
+    }
+    main form #expiration-date {
+        width: 60.3%;
+    }
+    main form input {
+        height: 4vh;
+    }
+}
+
+@media(min-width: 1000px) {
+    :root {
+        font-size: 220%;
+    }
+    body header .top-header #login {
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 1100px) {
+    :root {
+        font-size: 150%;
+    }
+    main .page-tabs .tab-buttons button + button {
+        margin-right: 2.2vw;
+    }
+    .tab-content #bank-data button img {
+        margin-left: -1.5vw;
+    }
+    .page-tabs .tab-content {
+        width: 48.8vw;
+    }
+    .page-tabs .tab-buttons button, .page-tabs .tab-buttons a {
+        width: 20vw;
+    }
+    .page-tabs .tab-content {
+        border: 3px solid var(--color-utility);
+    }
+    main form fieldset {
+        width: 80%;
+    }
+    main form {
+        margin-left: -1vw;
+        margin-bottom: 6vh;
+    }
+    main article {
+        margin-left: 2.5vw;
+    }
+    .tab-content #bank-data strong button {
+        margin-left: 2vw;
+    }
+    main form #cancel {
+        left: 5vw;
+        cursor: pointer;
+        transition: .5s;
+    }
+    main form #cancel:hover {
+        background-color: rgb(224, 3, 3);
+    }
+    
+    main form #submit-button {
+        right: 5vw;
+        cursor: pointer;
+        transition: .5s;
+    }
+    main form #submit-button:hover {
+        background-color: rgb(4, 114, 4);
+    }
+    .tab-content #bank-data h3 {
+        margin-left: 2vw;
+    }
+    main {
+        margin-bottom: 10vh;
+    }
+    #delete-img {
+        cursor: pointer;
+    }
+}

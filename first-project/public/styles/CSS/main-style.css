@@ -1,0 +1,24 @@
+:root {
+    --color-primary: #2681ff;
+    --color-primary-dark: #0052be; 
+    --color-primary-vdark: #054A91;
+    --color-primary-light: #81A4CD;
+    --color-primary-vlight: #DBE4EE;
+    --color-secondary: #f8f17d;
+    --color-secondary-dark: #ddd450;
+    --color-secondary-light: #f8f39b;
+    --color-utility: #F17300;
+    --color-utility-dark: #d16500;
+    --font-primary: 'Montserrat';
+    --font-secondary: 'Work Sans';
+    --font-texts: 'Fira Sans Condensed';
+    box-sizing: border-box;
+}
+
+body, html {
+    background: var(--color-primary-vdark);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+}
