@@ -15,7 +15,7 @@ function verifyDate () {
             } else {
                 submitButton.type = 'submit'
             }
-
+            
         } else {
             submitButton.removeEventListener('click', verifyDate)
         }
