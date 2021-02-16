@@ -298,7 +298,7 @@ async function completeLogin (req, res) {
 
     const loginConfirm = await db.all(queryUser);
     
-    if(loginConfirm == '') { //If the data was not found in the database, return the query with success = 0
+    if(loginConfirm == '') { //If the data was not found on database, return a query with success = 0
         res.redirect('/sig&log' + '?success=0')
     } else { //Get user information
 
@@ -308,7 +308,7 @@ async function completeLogin (req, res) {
             SELECT userBankData.*
             FROM userBankData
             WHERE userBankData.user_id = ${actualID}
-        `) //Pick the userBankData
+        `) //Pick userBankData
 
         const BankConfirm = await db.all(queryBank)
         
@@ -318,7 +318,7 @@ async function completeLogin (req, res) {
 
         if(actualMovieID == 0 || actualMovieID == undefined) { //Verify if the user clicked on some movie
             return res.redirect('/logged'); 
-        } else { //If him clicked, redirect to buy ticket page of the movie
+        } else { //If he has clicked, redirect to buy ticket page of the selected movie
             return res.redirect(`/buy-ticket?movieID=${actualMovieID}`)
         }      
     }
@@ -359,7 +359,7 @@ async function logged (req, res) {
     var verifyBank = Object.values(userBankData[0]);
     verifyBank = (verifyBank[0] != '' ) ? true : false; //Verify if a credit card was registered
     
-    if(req.query.cardID != undefined) { //Receive Card ID from axios on frontend, if receive, delete card
+    if(req.query.cardID != undefined) { //Receive Card ID from axios on frontend, if it has received, delete card
         const cardID = req.query.cardID
 
         const cardNumber = userBankData[cardID].cardNumber
