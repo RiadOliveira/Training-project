@@ -46,6 +46,12 @@
   
     # Open the app
       # After run the server, will be possible to access the app on port 5500.
+  
+    # Tests orientation
+      # In order to facilitate tests with movies addition and removing, was created two scripts,
+      # those are: insertMovieData and deleteMovie, which are inside src/database/MovieDB.
+      # (insertMovieData contains two fake movies to test, but, on deleteMovie, you will need to pass the
+      # ID, to the variable MovieID, of the movie that you want to delete).
   ```
 </ul>
 
