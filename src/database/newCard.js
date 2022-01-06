@@ -1,5 +1,5 @@
 module.exports = async function (db, userID, userBankData) {
-    const addCard = await db.run(`
+  await db.run(`
         INSERT INTO userBankData (
             cardNumber,
             expirationDate,
@@ -13,5 +13,5 @@ module.exports = async function (db, userID, userBankData) {
             "${userBankData.cardName}",
             "${userID}"
         );
-    `)
-}
+    `);
+};

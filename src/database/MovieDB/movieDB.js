@@ -1,7 +1,7 @@
 const sqlite = require('sqlite-async');
 
-function execute (db) {
-    return db.exec(`
+const execute = (db) =>
+  db.exec(`
         CREATE TABLE IF NOT EXISTS movies (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
@@ -27,7 +27,8 @@ function execute (db) {
             language TEXT,
             movieID INTEGER
         )
-    `)
-}
+    `);
 
-module.exports = sqlite.open(__dirname + '/moviesDatabase.sqlite').then(execute);
+module.exports = sqlite
+  .open(__dirname + '/moviesDatabase.sqlite')
+  .then(execute);

@@ -1,6 +1,5 @@
-module.exports = async function (datab, BankTest, {userData, userBankData}) {
-
-    const createUser = await datab.run(`
+module.exports = async function (datab, BankTest, { userData, userBankData }) {
+  const { lastID } = await datab.run(`
         INSERT INTO users (
             username,
             userEmail,
@@ -20,15 +19,12 @@ module.exports = async function (datab, BankTest, {userData, userBankData}) {
             "${userData.userAdressNumber}",
             "${userData.userNeighborhood}"
         );
-    `)
+    `);
 
-    var UserID = createUser.lastID;
+  if (BankTest) {
+    const actualBank = userBankData[0];
 
-    if(BankTest == true) {
-
-        var actualBank = userBankData[0]
-
-        const createBankData = await datab.run(`
+    await datab.run(`
             INSERT INTO userBankData (
                 cardNumber,
                 expirationDate,
@@ -40,10 +36,10 @@ module.exports = async function (datab, BankTest, {userData, userBankData}) {
                 "${actualBank.expirationDate}",
                 "${actualBank.cvv}",
                 "${actualBank.cardName}",
-                "${UserID}"
-            );  
-            `)
-    }
-    
-    return UserID;
-}
+                "${lastID}"
+            );
+            `);
+  }
+
+  return lastID;
+};

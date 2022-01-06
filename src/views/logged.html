@@ -32,9 +32,9 @@
                 <button onclick="navTabs(1)">Dados bancários</button>
                 <a href="/">Sair</a>
             </div>
-            
+
             <div class="tab-content">
-                
+
                 <div id="user-data">
                     {%if userData.username != ''%}
                     <span>Nome de usuário:<br>{{userData.username}}<br></span>
@@ -47,23 +47,23 @@
                     <span>Bairro:<br>{{userData.userNeighborhood}}<br></span>
                     {%endif%}
                 </div>
-                
+
                 <div id="bank-data">
                     <h3>Cartões:<button onclick="addCard()">Adicionar cartão</button></h3>
 
                     <form action="/add-card" name="AddCard" id="add-card" method="POST">
                         <fieldset>
                             <legend>Dados bancários</legend>
-                            
+
                             <label for="cardNumber">Número: </label>
                             <input type="number" name="cardNumber" id="card-number" maxlength="16" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
-            
+
                             <label for="expirationDate">Validade: </label>
                             <input type="month" name="expirationDate" id="expiration-date" required>
-            
+
                             <label for="cvv">CVV: </label>
                             <input type="number" name="cvv" id="cvv" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
-            
+
                             <label for="cardName">Nome Cartão: </label>
                             <input type="text" name="cardName" id="card-name" required>
 

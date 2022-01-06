@@ -1,8 +1,8 @@
-module.exports = async function (db, {movieData, movieSchedule}) {
+module.exports = async function (db, { movieData, movieSchedule }) {
+  let insertMovieData;
 
-    if(movieData.highlightPoster != '') {
-
-        var insertMovieData = await db.run(`
+  if (!!movieData.highlightPoster) {
+    insertMovieData = await db.run(`
             INSERT INTO movies (
                 name,
                 producer,
@@ -28,11 +28,9 @@ module.exports = async function (db, {movieData, movieSchedule}) {
                 "${movieData.trailerLink}",
                 "${movieData.highlightPoster}"
             );
-        `)
-
-    } else {
-
-        var insertMovieData = await db.run(`
+        `);
+  } else {
+    insertMovieData = await db.run(`
             INSERT INTO movies (
                 name,
                 producer,
@@ -56,14 +54,12 @@ module.exports = async function (db, {movieData, movieSchedule}) {
                 "${movieData.genre}",
                 "${movieData.trailerLink}"
             );
-        `)
-    }
+        `);
+  }
 
-    const movieID = insertMovieData.lastID
-
-    const insertMoviesSchedule = await movieSchedule.map((movieProgram) => {
-
-        const insertMovieSchedule = db.run(`
+  const insertMoviesSchedule = await movieSchedule.map(
+    async (movieProgram) =>
+      await db.run(`
             INSERT INTO movieSchedule (
                 timeFrom,
                 timeTo,
@@ -79,10 +75,10 @@ module.exports = async function (db, {movieData, movieSchedule}) {
                 ${movieProgram.month},
                 ${movieProgram.year},
                 "${movieProgram.language}",
-                ${movieID}
+                ${insertMovieData.lastID}
             );
         `)
-    })
+  );
 
-    await Promise.all(insertMoviesSchedule) 
-}
+  await Promise.all(insertMoviesSchedule);
+};

@@ -1,8 +1,6 @@
-module.exports = async function (db, movieID, {movieSchedule}) {
-
-    const insertMoviesSchedule = await movieSchedule.map((movieProgram) => {
-
-        const insertMovieSchedule = db.run(`
+module.exports = async function (db, movieID, { movieSchedule }) {
+  const insertMoviesSchedule = await movieSchedule.map((movieProgram) =>
+    db.run(`
             INSERT INTO movieSchedule (
                 timeFrom,
                 timeTo,
@@ -21,7 +19,7 @@ module.exports = async function (db, movieID, {movieSchedule}) {
                 ${movieID}
             );
         `)
-    })
+  );
 
-    await Promise.all(insertMoviesSchedule)
-}
+  await Promise.all(insertMoviesSchedule);
+};

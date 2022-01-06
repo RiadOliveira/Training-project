@@ -1,14 +1,8 @@
-module.exports = function getDate(day, month, year) {
+const getDate = (day = 1, month = 1, year = 2021) => {
+  day = day.toString().padStart(2, '0');
+  month = month.toString().padStart(2, '0');
 
-    if(day<10 && month<10) {
-        var actualDate = `0${day}/0${month}/${year}`
-    } else if(day<10) {
-        var actualDate = `0${day}/${month}/${year}`
-    } else if(month<10) {
-        var actualDate= `${day}/0${month}/${year}`
-    } else {
-        var actualDate = `${day}/${month}/${year}`
-    }
+  return `${day}/${month}/${year}`;
+};
 
-    return actualDate;
-}
+module.exports = getDate;

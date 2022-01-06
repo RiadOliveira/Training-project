@@ -1,19 +1,21 @@
-var userData = {
-    username:'',
-    userEmail:'',
-    userCPF:'',
-    userPassword:'',
-    userCEP:'',
-    userAdress:'',
-    userAdressNumber:'',
-    userNeighborhood:''
-}
+const userData = {
+  username: '',
+  userEmail: '',
+  userCPF: '',
+  userPassword: '',
+  userCEP: '',
+  userAdress: '',
+  userAdressNumber: '',
+  userNeighborhood: '',
+};
 
-var userBankData = [{
+const userBankData = [
+  {
     cardNumber: '',
     expirationDate: '',
     cvv: '',
-    cardName: ''
-}]
+    cardName: '',
+  },
+];
 
-module.exports = {userData, userBankData}
+module.exports = { userData, userBankData };

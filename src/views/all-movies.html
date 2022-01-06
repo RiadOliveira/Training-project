@@ -32,15 +32,15 @@
 
         </div>
 
-        
+
         <div class="highlights">
             {%for Movies in highlightData%}
                 <a style="opacity: 0; display: none" href="/individual-movie?movieID={{Movies.MovieID}}" class='movies-posters'>
-                    <img src="{{Movies.highLink}}" alt="movie-highlight"> 
+                    <img src="{{Movies.highLink}}" alt="movie-highlight">
                 </a>
             {%endfor%}
 
-            <button onclick="showHighlights(-1)" id="left-arrow"> 
+            <button onclick="showHighlights(-1)" id="left-arrow">
                 <img src="/images/utils/left-arrow.png" alt="left-arrow">
             </button>
 
@@ -49,7 +49,7 @@
             </button>
         </div>
     </Header>
-    
+
     <main>
         <div class="movies">
             <div id="exibition-search">
@@ -67,7 +67,7 @@
 
                 {%for ind in indexes%}
                 <article class="movies-description">
-                
+
                     <a href="/individual-movie?movieID={{MoviesData[ind].id}}">
                         <img id="poster" src="{{MoviesData[ind].poster}}" alt="movie-poster">
                     </a>
@@ -79,7 +79,7 @@
                             </a>
                             <img src="{{MoviesData[ind].classification}}" alt="Classification">
                         </div>
-                        
+
                         <p>Horário: {{MoviesData[ind].timeFrom}} - {{MoviesData[ind].timeTo}}h &nbsp &nbsp Idioma: {{MoviesData[ind].language}}</p>
                         <div class="synopsis">
                             <p>{{MoviesData[ind].reducedSynopsis}}</p>
@@ -88,7 +88,7 @@
                     </div>
                 </article>
                 {%endfor%}
-            
+
             {%else%}
                 <div id="no-movies">Nenhum filme encontrado no dia escolhido.</div>
             {%endif%}

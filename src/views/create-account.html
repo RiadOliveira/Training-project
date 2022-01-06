@@ -30,7 +30,7 @@
         <form action="/confirm-account" name="createAccount" method="POST">
             <fieldset>
                 <legend>Dados pessoais*</legend>
-            
+
                 <label for="username">Nome: </label>
                 <input type="text" name="username" id="username" required>
 
@@ -45,12 +45,12 @@
 
                 <label for="confirmPassword">Confirmação: </label>
                 <input type="password" name="confirmPassword" id="confirm-password" required>
-                
+
             </fieldset>
 
             <fieldset>
                 <legend>Endereço*</legend>
-                
+
                 <label for="userCEP">CEP: </label>
                 <input type="number" name="userCEP" id="user-cep" required>
 
@@ -59,7 +59,7 @@
 
                 <label for="userAdressNumber">Número: </label>
                 <input type="number" name="userAdressNumber" id="user-adress-number" required>
-                
+
                 <label for="userNeighborhood">Bairro: </label>
                 <input type="text" name="userNeighborhood" id="user-neighborhood" required>
 
@@ -67,7 +67,7 @@
 
             <fieldset id='bank-data'>
                 <legend>Dados bancários</legend>
-                
+
                 <label for="cardNumber">Número: </label>
                 <input type="number" name="cardNumber" id="card-number" minlength="16" maxlength="16" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 

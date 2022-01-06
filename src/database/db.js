@@ -1,7 +1,7 @@
 const sqlite = require('sqlite-async');
 
-function executeDB (db) {
-    return db.exec(`
+const executeDB = (db) =>
+  db.exec(`
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT,
@@ -22,7 +22,8 @@ function executeDB (db) {
             cardName TEXT,
             user_id INTEGER
         );
-    `)
-}
+    `);
 
-module.exports = sqlite.open(__dirname + '/userDatabase.sqlite').then(executeDB);
+module.exports = sqlite
+  .open(__dirname + '/userDatabase.sqlite')
+  .then(executeDB);
