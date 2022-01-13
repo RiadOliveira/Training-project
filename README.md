@@ -2,6 +2,10 @@
   
 <p align="center">A cinema platform to show which are the movies in theaters, being possible to buy tickets for those movies, with a simple cards system. I have decided to create this application in order to practice web development principles.</p>
 
+<h4 align="center"> 
+	Status :heavy_check_mark: Finished</br>
+</h4>
+
 ![image](https://img.shields.io/github/license/RiadOliveira/Tradelous-frontend-desktop)
 
 <p align="center">
